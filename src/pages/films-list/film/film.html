@@ -1,0 +1,79 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{title}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <button (click)="onGoAccessModif()" ion-button>Rendre Modifiable</button>
+  <!-- <div *ngIf="!modif">
+    J'affiche le détail
+  </div>
+  <div *ngIf="modif">
+    Je peux modifier
+  </div> -->
+
+  <div *ngIf="modif; then content else otherContent"></div>
+  <ng-template #content>
+    <ion-item>
+      <ion-label>Titre</ion-label>
+      <ion-input [(ngModel)]="console.data.name" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Marque</ion-label>
+      <ion-input [(ngModel)]="console.data.brand" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Taille</ion-label>
+      <ion-input [(ngModel)]="console.data.size" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Prix</ion-label>
+      <ion-input [(ngModel)]="console.data.price" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Image</ion-label>
+      <ion-input [(ngModel)]="console.data.image" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Description</ion-label>
+      <ion-input [(ngModel)]="console.data.description" type="text"></ion-input>
+    </ion-item>
+    <br/>
+    <div>
+      <button (click)="onModif()" ion-button>Modifier</button>
+    </div>
+
+  </ng-template>
+  <ng-template #otherContent>
+    <ion-grid *ngIf="console">
+      <ion-row>
+
+        <ion-col col-6>
+          <button (click)="suppr()" ion-button>
+            <ion-icon name="trash"></ion-icon>
+          </button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-6>
+          <img [alt]="console.data.name" [src]="console.data.image">
+        </ion-col>
+        <ion-col col-6>
+          <strong>Nom :</strong> <br>
+          {{console.data.name}} <br>
+          <strong>prix :</strong><br>
+          {{console.data.price}} <br>
+          <strong>Marque :</strong> <br>
+          {{console.data.brand}} <br>
+          <strong>Taille :</strong> <br>
+          {{console.data.size}} <br>
+
+          <strong>Description :</strong> <br>
+          {{console.data.description}}
+        </ion-col>
+      </ion-row>
+
+    </ion-grid>
+  </ng-template>
+</ion-content>

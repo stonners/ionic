@@ -1,0 +1,38 @@
+<!--
+  Generated template for the FilmsListPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>Liste de consoles</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h2>Création d'un nouveau film</h2>
+  <button (click)="onGoToCreate()" ion-button>Création</button>
+  <h2>Liste de mes films</h2>
+  <ion-grid>
+    <ion-row>
+
+      <ion-col *ngFor="let console of consoles" col-6>
+        <ion-list (click)="onGoToFilm(console.data.name, console.id)">
+          <ion-item>
+
+            <img [alt]="console.data.name" [src]="console.data.image" width="50px"><br>
+            {{console.data.name}}
+          </ion-item>
+
+
+        </ion-list>
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+<ion-footer>
+  Pied de page
+</ion-footer>

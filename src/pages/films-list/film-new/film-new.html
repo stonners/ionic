@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Nouvelle console</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-item>
+    <ion-label>Titre</ion-label>
+    <ion-input [(ngModel)]="console.name" type="text"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Marque</ion-label>
+    <ion-input [(ngModel)]="console.brand" type="text"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Taille</ion-label>
+    <ion-input [(ngModel)]="console.size" type="text"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Prix</ion-label>
+    <ion-input [(ngModel)]="console.price" type="text"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Image</ion-label>
+    <ion-input [(ngModel)]="console.image" type="text"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Description</ion-label>
+    <ion-input [(ngModel)]="console.description" type="text"></ion-input>
+  </ion-item>
+  <br/>
+  <div>
+    <button (click)="add()" ion-button>Envoyer</button>
+  </div>
+
+
+</ion-content>
